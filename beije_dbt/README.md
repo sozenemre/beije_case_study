@@ -1,15 +1,3 @@
-Welcome to your new dbt project!
+### Beije dbt Project Overview (Summary)
 
-### Using the starter project
-
-Try running the following commands:
-- dbt run
-- dbt test
-
-
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+This dbt project manages the entire transformation layer for the Beije Case ELT pipeline, utilizing a multi-layered Medallion Architecture within BigQuery to ensure data quality and optimized performance. The project structure segregates models into ODS (for initial cleaned raw data), DIM/FACT (for core analytical entities like customers and orders), and MART (for final BI-ready KPIs). All execution is orchestrated by Airflow, relying on a Service Account Key mounted via Docker volumes for secure access to the beije_analytics BigQuery dataset. Key technical choices include the use of Time Partitioning and Clustering for efficient data storage and query speed, and distinct incremental strategies—insert_overwrite for large ODS/FACT loads and merge for precise updates to Dimension tables—to minimize processing costs and runtime. Detailed logic and model relationships are maintained across the models/dim, models/fact, and models/marts directories, supporting a robust and traceable analytics foundation.
