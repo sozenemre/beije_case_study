@@ -1,0 +1,54 @@
+60119081cf5c
+*** Found local files:
+***   * /opt/airflow/logs/dag_id=beije_dbt_elt_pipeline/run_id=manual__2025-10-27T01:35:02.620819+00:00/task_id=dbt_run_ods_layer/attempt=1.log
+[2025-10-27T01:35:20.626+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: beije_dbt_elt_pipeline.dbt_run_ods_layer manual__2025-10-27T01:35:02.620819+00:00 [queued]>
+[2025-10-27T01:35:20.631+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: beije_dbt_elt_pipeline.dbt_run_ods_layer manual__2025-10-27T01:35:02.620819+00:00 [queued]>
+[2025-10-27T01:35:20.632+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-10-27T01:35:20.638+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): dbt_run_ods_layer> on 2025-10-27 01:35:02.620819+00:00
+[2025-10-27T01:35:20.641+0000] {standard_task_runner.py:60} INFO - Started process 583 to run task
+[2025-10-27T01:35:20.643+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'beije_dbt_elt_pipeline', 'dbt_run_ods_layer', 'manual__2025-10-27T01:35:02.620819+00:00', '--job-id', '69', '--raw', '--subdir', 'DAGS_FOLDER/beije_dbt_elt_pipeline.py', '--cfg-path', '/tmp/tmpy9th4ui_']
+[2025-10-27T01:35:20.644+0000] {standard_task_runner.py:88} INFO - Job 69: Subtask dbt_run_ods_layer
+[2025-10-27T01:35:20.673+0000] {task_command.py:423} INFO - Running <TaskInstance: beije_dbt_elt_pipeline.dbt_run_ods_layer manual__2025-10-27T01:35:02.620819+00:00 [running]> on host 60119081cf5c
+[2025-10-27T01:35:20.715+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='beije_dbt_elt_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_ods_layer' AIRFLOW_CTX_EXECUTION_DATE='2025-10-27T01:35:02.620819+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-27T01:35:02.620819+00:00'
+[2025-10-27T01:35:20.716+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-27T01:35:20.717+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /usr/local/***/dbt/beije_dbt && dbt --profile beije_dbt_project run --models tag:ods']
+[2025-10-27T01:35:20.724+0000] {subprocess.py:86} INFO - Output:
+[2025-10-27T01:35:21.669+0000] {subprocess.py:93} INFO - [0m01:35:21  Running with dbt=1.8.7
+[2025-10-27T01:35:22.233+0000] {subprocess.py:93} INFO - [0m01:35:22  Registered adapter: bigquery=1.8.3
+[2025-10-27T01:35:22.429+0000] {subprocess.py:93} INFO - [0m01:35:22  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2025-10-27T01:35:22.429+0000] {subprocess.py:93} INFO - There are 1 unused configuration paths:
+[2025-10-27T01:35:22.429+0000] {subprocess.py:93} INFO - - models.beije_dbt.example
+[2025-10-27T01:35:22.552+0000] {subprocess.py:93} INFO - [0m01:35:22  Found 19 models, 4 data tests, 10 sources, 479 macros
+[2025-10-27T01:35:22.554+0000] {subprocess.py:93} INFO - [0m01:35:22
+[2025-10-27T01:35:24.007+0000] {subprocess.py:93} INFO - [0m01:35:24  Concurrency: 4 threads (target='dev')
+[2025-10-27T01:35:24.009+0000] {subprocess.py:93} INFO - [0m01:35:24
+[2025-10-27T01:35:24.024+0000] {subprocess.py:93} INFO - [0m01:35:24  1 of 10 START sql incremental model beije_analytics.ods_addresses .............. [RUN]
+[2025-10-27T01:35:24.025+0000] {subprocess.py:93} INFO - [0m01:35:24  2 of 10 START sql incremental model beije_analytics.ods_cities ................. [RUN]
+[2025-10-27T01:35:24.026+0000] {subprocess.py:93} INFO - [0m01:35:24  3 of 10 START sql incremental model beije_analytics.ods_countries .............. [RUN]
+[2025-10-27T01:35:24.028+0000] {subprocess.py:93} INFO - [0m01:35:24  4 of 10 START sql table model beije_analytics.ods_marketing_spend .............. [RUN]
+[2025-10-27T01:35:27.676+0000] {subprocess.py:93} INFO - [0m01:35:27  4 of 10 OK created sql table model beije_analytics.ods_marketing_spend ......... [[32mCREATE TABLE (72.0 rows, 642.0 Bytes processed)[0m in 3.64s]
+[2025-10-27T01:35:27.679+0000] {subprocess.py:93} INFO - [0m01:35:27  5 of 10 START sql incremental model beije_analytics.ods_neighborhoods .......... [RUN]
+[2025-10-27T01:35:31.026+0000] {subprocess.py:93} INFO - [0m01:35:31  3 of 10 OK created sql incremental model beije_analytics.ods_countries ......... [[32mSCRIPT (151.0 Bytes processed)[0m in 6.99s]
+[2025-10-27T01:35:31.032+0000] {subprocess.py:93} INFO - [0m01:35:31  6 of 10 START sql incremental model beije_analytics.ods_orders ................. [RUN]
+[2025-10-27T01:35:31.156+0000] {subprocess.py:93} INFO - [0m01:35:31  1 of 10 OK created sql incremental model beije_analytics.ods_addresses ......... [[32mSCRIPT (1.4 MiB processed)[0m in 7.13s]
+[2025-10-27T01:35:31.158+0000] {subprocess.py:93} INFO - [0m01:35:31  7 of 10 START sql incremental model beije_analytics.ods_shipments .............. [RUN]
+[2025-10-27T01:35:32.459+0000] {subprocess.py:93} INFO - [0m01:35:32  2 of 10 OK created sql incremental model beije_analytics.ods_cities ............ [[32mSCRIPT (289.0 KiB processed)[0m in 8.43s]
+[2025-10-27T01:35:32.461+0000] {subprocess.py:93} INFO - [0m01:35:32  8 of 10 START sql incremental model beije_analytics.ods_states ................. [RUN]
+[2025-10-27T01:35:34.626+0000] {subprocess.py:93} INFO - [0m01:35:34  5 of 10 OK created sql incremental model beije_analytics.ods_neighborhoods ..... [[32mSCRIPT (25.9 MiB processed)[0m in 6.95s]
+[2025-10-27T01:35:34.628+0000] {subprocess.py:93} INFO - [0m01:35:34  9 of 10 START sql incremental model beije_analytics.ods_subscriptions .......... [RUN]
+[2025-10-27T01:35:38.016+0000] {subprocess.py:93} INFO - [0m01:35:38  7 of 10 OK created sql incremental model beije_analytics.ods_shipments ......... [[32mSCRIPT (1.5 MiB processed)[0m in 6.86s]
+[2025-10-27T01:35:38.020+0000] {subprocess.py:93} INFO - [0m01:35:38  10 of 10 START sql incremental model beije_analytics.ods_users ................. [RUN]
+[2025-10-27T01:35:38.226+0000] {subprocess.py:93} INFO - [0m01:35:38  6 of 10 OK created sql incremental model beije_analytics.ods_orders ............ [[32mSCRIPT (38.4 MiB processed)[0m in 7.19s]
+[2025-10-27T01:35:39.064+0000] {subprocess.py:93} INFO - [0m01:35:39  8 of 10 OK created sql incremental model beije_analytics.ods_states ............ [[32mSCRIPT (17.7 KiB processed)[0m in 6.60s]
+[2025-10-27T01:35:41.545+0000] {subprocess.py:93} INFO - [0m01:35:41  9 of 10 OK created sql incremental model beije_analytics.ods_subscriptions ..... [[32mSCRIPT (1.4 MiB processed)[0m in 6.92s]
+[2025-10-27T01:35:45.145+0000] {subprocess.py:93} INFO - [0m01:35:45  10 of 10 OK created sql incremental model beije_analytics.ods_users ............ [[32mSCRIPT (887.7 KiB processed)[0m in 7.12s]
+[2025-10-27T01:35:45.157+0000] {subprocess.py:93} INFO - [0m01:35:45
+[2025-10-27T01:35:45.158+0000] {subprocess.py:93} INFO - [0m01:35:45  Finished running 1 table model, 9 incremental models in 0 hours 0 minutes and 22.60 seconds (22.60s).
+[2025-10-27T01:35:45.220+0000] {subprocess.py:93} INFO - [0m01:35:45
+[2025-10-27T01:35:45.221+0000] {subprocess.py:93} INFO - [0m01:35:45  [32mCompleted successfully[0m
+[2025-10-27T01:35:45.221+0000] {subprocess.py:93} INFO - [0m01:35:45
+[2025-10-27T01:35:45.222+0000] {subprocess.py:93} INFO - [0m01:35:45  Done. PASS=10 WARN=0 ERROR=0 SKIP=0 TOTAL=10
+[2025-10-27T01:35:46.404+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-10-27T01:35:46.434+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=beije_dbt_elt_pipeline, task_id=dbt_run_ods_layer, execution_date=20251027T013502, start_date=20251027T013520, end_date=20251027T013546
+[2025-10-27T01:35:46.475+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-10-27T01:35:46.498+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

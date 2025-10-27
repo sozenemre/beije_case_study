@@ -1,0 +1,44 @@
+60119081cf5c
+*** Found local files:
+***   * /opt/airflow/logs/dag_id=beije_dbt_elt_pipeline/run_id=manual__2025-10-27T01:35:02.620819+00:00/task_id=dbt_run_dim_fact_layer/attempt=1.log
+[2025-10-27T01:35:47.132+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: beije_dbt_elt_pipeline.dbt_run_dim_fact_layer manual__2025-10-27T01:35:02.620819+00:00 [queued]>
+[2025-10-27T01:35:47.140+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: beije_dbt_elt_pipeline.dbt_run_dim_fact_layer manual__2025-10-27T01:35:02.620819+00:00 [queued]>
+[2025-10-27T01:35:47.140+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-10-27T01:35:47.148+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): dbt_run_dim_fact_layer> on 2025-10-27 01:35:02.620819+00:00
+[2025-10-27T01:35:47.151+0000] {standard_task_runner.py:60} INFO - Started process 605 to run task
+[2025-10-27T01:35:47.156+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'beije_dbt_elt_pipeline', 'dbt_run_dim_fact_layer', 'manual__2025-10-27T01:35:02.620819+00:00', '--job-id', '70', '--raw', '--subdir', 'DAGS_FOLDER/beije_dbt_elt_pipeline.py', '--cfg-path', '/tmp/tmpho7yv22c']
+[2025-10-27T01:35:47.157+0000] {standard_task_runner.py:88} INFO - Job 70: Subtask dbt_run_dim_fact_layer
+[2025-10-27T01:35:47.190+0000] {task_command.py:423} INFO - Running <TaskInstance: beije_dbt_elt_pipeline.dbt_run_dim_fact_layer manual__2025-10-27T01:35:02.620819+00:00 [running]> on host 60119081cf5c
+[2025-10-27T01:35:47.236+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='beije_dbt_elt_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_dim_fact_layer' AIRFLOW_CTX_EXECUTION_DATE='2025-10-27T01:35:02.620819+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-27T01:35:02.620819+00:00'
+[2025-10-27T01:35:47.237+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-27T01:35:47.238+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /usr/local/***/dbt/beije_dbt && dbt --profile beije_dbt_project run --models tag:dim tag:fact']
+[2025-10-27T01:35:47.244+0000] {subprocess.py:86} INFO - Output:
+[2025-10-27T01:35:48.132+0000] {subprocess.py:93} INFO - [0m01:35:48  Running with dbt=1.8.7
+[2025-10-27T01:35:48.717+0000] {subprocess.py:93} INFO - [0m01:35:48  Registered adapter: bigquery=1.8.3
+[2025-10-27T01:35:48.926+0000] {subprocess.py:93} INFO - [0m01:35:48  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2025-10-27T01:35:48.926+0000] {subprocess.py:93} INFO - There are 1 unused configuration paths:
+[2025-10-27T01:35:48.926+0000] {subprocess.py:93} INFO - - models.beije_dbt.example
+[2025-10-27T01:35:49.065+0000] {subprocess.py:93} INFO - [0m01:35:49  Found 19 models, 4 data tests, 10 sources, 479 macros
+[2025-10-27T01:35:49.067+0000] {subprocess.py:93} INFO - [0m01:35:49
+[2025-10-27T01:35:50.573+0000] {subprocess.py:93} INFO - [0m01:35:50  Concurrency: 4 threads (target='dev')
+[2025-10-27T01:35:50.574+0000] {subprocess.py:93} INFO - [0m01:35:50
+[2025-10-27T01:35:50.584+0000] {subprocess.py:93} INFO - [0m01:35:50  1 of 5 START sql table model beije_analytics.dim_customer ...................... [RUN]
+[2025-10-27T01:35:50.585+0000] {subprocess.py:93} INFO - [0m01:35:50  2 of 5 START sql incremental model beije_analytics.dim_subscription ............ [RUN]
+[2025-10-27T01:35:50.586+0000] {subprocess.py:93} INFO - [0m01:35:50  3 of 5 START sql table model beije_analytics.fact_marketing_spend .............. [RUN]
+[2025-10-27T01:35:50.587+0000] {subprocess.py:93} INFO - [0m01:35:50  4 of 5 START sql incremental model beije_analytics.fact_order .................. [RUN]
+[2025-10-27T01:35:54.287+0000] {subprocess.py:93} INFO - [0m01:35:54  2 of 5 OK created sql incremental model beije_analytics.dim_subscription ....... [[32mMERGE (0.0 rows, 49.5 KiB processed)[0m in 3.70s]
+[2025-10-27T01:35:54.292+0000] {subprocess.py:93} INFO - [0m01:35:54  5 of 5 START sql incremental model beije_analytics.fact_shipment ............... [RUN]
+[2025-10-27T01:35:54.315+0000] {subprocess.py:93} INFO - [0m01:35:54  3 of 5 OK created sql table model beije_analytics.fact_marketing_spend ......... [[32mCREATE TABLE (72.0 rows, 1.6 KiB processed)[0m in 3.73s]
+[2025-10-27T01:35:55.235+0000] {subprocess.py:93} INFO - [0m01:35:55  1 of 5 OK created sql table model beije_analytics.dim_customer ................. [[32mCREATE TABLE (90.7k rows, 8.8 MiB processed)[0m in 4.65s]
+[2025-10-27T01:35:57.297+0000] {subprocess.py:93} INFO - [0m01:35:57  4 of 5 OK created sql incremental model beije_analytics.fact_order ............. [[32mSCRIPT (35.6 KiB processed)[0m in 6.71s]
+[2025-10-27T01:36:00.911+0000] {subprocess.py:93} INFO - [0m01:36:00  5 of 5 OK created sql incremental model beije_analytics.fact_shipment .......... [[32mSCRIPT (35.6 KiB processed)[0m in 6.62s]
+[2025-10-27T01:36:00.916+0000] {subprocess.py:93} INFO - [0m01:36:00
+[2025-10-27T01:36:00.916+0000] {subprocess.py:93} INFO - [0m01:36:00  Finished running 3 incremental models, 2 table models in 0 hours 0 minutes and 11.85 seconds (11.85s).
+[2025-10-27T01:36:00.967+0000] {subprocess.py:93} INFO - [0m01:36:00
+[2025-10-27T01:36:00.967+0000] {subprocess.py:93} INFO - [0m01:36:00  [32mCompleted successfully[0m
+[2025-10-27T01:36:00.968+0000] {subprocess.py:93} INFO - [0m01:36:00
+[2025-10-27T01:36:00.968+0000] {subprocess.py:93} INFO - [0m01:36:00  Done. PASS=5 WARN=0 ERROR=0 SKIP=0 TOTAL=5
+[2025-10-27T01:36:01.947+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-10-27T01:36:01.987+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=beije_dbt_elt_pipeline, task_id=dbt_run_dim_fact_layer, execution_date=20251027T013502, start_date=20251027T013547, end_date=20251027T013601
+[2025-10-27T01:36:02.058+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-10-27T01:36:02.094+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

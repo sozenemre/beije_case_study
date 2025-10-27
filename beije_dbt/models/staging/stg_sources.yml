@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: stage
+    schema: stage
+    description: "Raw data from application databases"
+
+    loaded_at_field: ingest_date
+    
+    freshness:
+      warn_after: {count: 24, period: hour}
+      error_after: {count: 48, period: hour}
+      
+    tables:
+      - name: subscriptions
+      - name: cities
+      - name: countries
+      - name: neighborhoods
+      - name: states
+      - name: shipments
+      - name: users
+      - name: addresses
+      - name: orders
+      - name: MarketingSpend

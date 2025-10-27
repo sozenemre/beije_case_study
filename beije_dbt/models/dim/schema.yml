@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: dim_subscription
+    columns:
+      - name: subscription_id
+        tests:
+          - unique
+          - not_null
+          
+  - name: dim_customer
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null

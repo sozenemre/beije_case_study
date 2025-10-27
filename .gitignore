@@ -1,0 +1,14 @@
+# Airflow specific files
+orchestration/logs/
+orchestration/dags/dag_*.log
+orchestration/config/
+orchestration/plugins/
+# dbt specific files
+beije_dbt/target/
+beije_dbt/dbt_packages/
+beije_dbt/profiles.yml
+
+# Docker/System
+.DS_Store
+*.swp
+# -----------------------------------------------------------

@@ -1,0 +1,42 @@
+60119081cf5c
+*** Found local files:
+***   * /opt/airflow/logs/dag_id=beije_dbt_elt_pipeline/run_id=manual__2025-10-27T01:35:02.620819+00:00/task_id=dbt_run_marts_layer/attempt=1.log
+[2025-10-27T01:36:02.430+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: beije_dbt_elt_pipeline.dbt_run_marts_layer manual__2025-10-27T01:35:02.620819+00:00 [queued]>
+[2025-10-27T01:36:02.436+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: beije_dbt_elt_pipeline.dbt_run_marts_layer manual__2025-10-27T01:35:02.620819+00:00 [queued]>
+[2025-10-27T01:36:02.436+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-10-27T01:36:02.444+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): dbt_run_marts_layer> on 2025-10-27 01:35:02.620819+00:00
+[2025-10-27T01:36:02.448+0000] {standard_task_runner.py:60} INFO - Started process 627 to run task
+[2025-10-27T01:36:02.450+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'beije_dbt_elt_pipeline', 'dbt_run_marts_layer', 'manual__2025-10-27T01:35:02.620819+00:00', '--job-id', '71', '--raw', '--subdir', 'DAGS_FOLDER/beije_dbt_elt_pipeline.py', '--cfg-path', '/tmp/tmp8o7rqhww']
+[2025-10-27T01:36:02.451+0000] {standard_task_runner.py:88} INFO - Job 71: Subtask dbt_run_marts_layer
+[2025-10-27T01:36:02.482+0000] {task_command.py:423} INFO - Running <TaskInstance: beije_dbt_elt_pipeline.dbt_run_marts_layer manual__2025-10-27T01:35:02.620819+00:00 [running]> on host 60119081cf5c
+[2025-10-27T01:36:02.522+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='beije_dbt_elt_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_marts_layer' AIRFLOW_CTX_EXECUTION_DATE='2025-10-27T01:35:02.620819+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-27T01:35:02.620819+00:00'
+[2025-10-27T01:36:02.523+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-27T01:36:02.524+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /usr/local/***/dbt/beije_dbt && dbt --profile beije_dbt_project run --models tag:mart']
+[2025-10-27T01:36:02.531+0000] {subprocess.py:86} INFO - Output:
+[2025-10-27T01:36:03.368+0000] {subprocess.py:93} INFO - [0m01:36:03  Running with dbt=1.8.7
+[2025-10-27T01:36:03.968+0000] {subprocess.py:93} INFO - [0m01:36:03  Registered adapter: bigquery=1.8.3
+[2025-10-27T01:36:04.188+0000] {subprocess.py:93} INFO - [0m01:36:04  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2025-10-27T01:36:04.189+0000] {subprocess.py:93} INFO - There are 1 unused configuration paths:
+[2025-10-27T01:36:04.189+0000] {subprocess.py:93} INFO - - models.beije_dbt.example
+[2025-10-27T01:36:04.314+0000] {subprocess.py:93} INFO - [0m01:36:04  Found 19 models, 4 data tests, 10 sources, 479 macros
+[2025-10-27T01:36:04.316+0000] {subprocess.py:93} INFO - [0m01:36:04
+[2025-10-27T01:36:05.639+0000] {subprocess.py:93} INFO - [0m01:36:05  Concurrency: 4 threads (target='dev')
+[2025-10-27T01:36:05.639+0000] {subprocess.py:93} INFO - [0m01:36:05
+[2025-10-27T01:36:05.646+0000] {subprocess.py:93} INFO - [0m01:36:05  1 of 4 START sql table model beije_analytics.mart_revenue_daily ................ [RUN]
+[2025-10-27T01:36:05.647+0000] {subprocess.py:93} INFO - [0m01:36:05  2 of 4 START sql table model beije_analytics.mart_subscriptions_daily .......... [RUN]
+[2025-10-27T01:36:09.034+0000] {subprocess.py:93} INFO - [0m01:36:09  1 of 4 OK created sql table model beije_analytics.mart_revenue_daily ........... [[32mCREATE TABLE (11.0 rows, 120.5 KiB processed)[0m in 3.38s]
+[2025-10-27T01:36:09.548+0000] {subprocess.py:93} INFO - [0m01:36:09  2 of 4 OK created sql table model beije_analytics.mart_subscriptions_daily ..... [[32mCREATE TABLE (39.0 rows, 49.5 KiB processed)[0m in 3.90s]
+[2025-10-27T01:36:09.552+0000] {subprocess.py:93} INFO - [0m01:36:09  3 of 4 START sql table model beije_analytics.mart_acquisition_efficiency ....... [RUN]
+[2025-10-27T01:36:12.890+0000] {subprocess.py:93} INFO - [0m01:36:12  3 of 4 OK created sql table model beije_analytics.mart_acquisition_efficiency .. [[32mCREATE TABLE (8.0 rows, 1.7 KiB processed)[0m in 3.34s]
+[2025-10-27T01:36:12.894+0000] {subprocess.py:93} INFO - [0m01:36:12  4 of 4 START sql view model beije_analytics.mart_kpis_latest ................... [RUN]
+[2025-10-27T01:36:14.243+0000] {subprocess.py:93} INFO - [0m01:36:14  4 of 4 OK created sql view model beije_analytics.mart_kpis_latest .............. [[32mCREATE VIEW (0 processed)[0m in 1.35s]
+[2025-10-27T01:36:14.248+0000] {subprocess.py:93} INFO - [0m01:36:14
+[2025-10-27T01:36:14.249+0000] {subprocess.py:93} INFO - [0m01:36:14  Finished running 3 table models, 1 view model in 0 hours 0 minutes and 9.93 seconds (9.93s).
+[2025-10-27T01:36:14.295+0000] {subprocess.py:93} INFO - [0m01:36:14
+[2025-10-27T01:36:14.296+0000] {subprocess.py:93} INFO - [0m01:36:14  [32mCompleted successfully[0m
+[2025-10-27T01:36:14.297+0000] {subprocess.py:93} INFO - [0m01:36:14
+[2025-10-27T01:36:14.298+0000] {subprocess.py:93} INFO - [0m01:36:14  Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
+[2025-10-27T01:36:15.169+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-10-27T01:36:15.186+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=beije_dbt_elt_pipeline, task_id=dbt_run_marts_layer, execution_date=20251027T013502, start_date=20251027T013602, end_date=20251027T013615
+[2025-10-27T01:36:15.218+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-10-27T01:36:15.229+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
